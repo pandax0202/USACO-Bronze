@@ -16,14 +16,14 @@ int main()
   }
   if (gin < gout) {
     sup = gout - gin;
-    sin -= 1;
+    sin -= gout - gin;
   }
   if (sin < sout) {
     bup = sout - sin;
-    bin -= 1;
+    bin -= sout - sin;
   }
   
-  fout << bup <<endl << sup << endl << gup << endl;
+  fout << bup << endl << sup << endl << gup << endl;
   
   return 0;
 }
