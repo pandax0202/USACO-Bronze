@@ -10,15 +10,18 @@ int main()
   int bin, bout, sin, sout, gin, gout, pin, pout, bup{}, gup{}, sup{};
   fin >> bin >> bout >> sin >> sout >> gin >> gout >> pin >> pout; 
   
-  if (pin < pout)
+  if (pin < pout) {
     gup = pout - pin;
     gin -= pout - pin;
-  if (gin < gout)
+  }
+  if (gin < gout) {
     sup = gout - gin;
     sin -= 1;
-  if (sin < sout)
+  }
+  if (sin < sout) {
     bup = sout - sin;
     bin -= 1;
+  }
   
   fout << bup <<endl << sup << endl << gup << endl;
   
