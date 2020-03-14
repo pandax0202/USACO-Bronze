@@ -12,12 +12,12 @@ int main()
   int numY = M/Y;
   int maxNum = 0, amtMilk;
   
-  for (int j = 0; j <= yPails; j++) {
+  for (int j = 0; j <= numY; j++) {
     int numX = (M-j*Y)/X;
     amtMilk = numX*X + j*Y;
     if (amtMilk >= maxNum) maxNum = amtMilk;
   }
-  fout << maxNum << "\n";
+  fout << maxNum << endl;
   
   return 0;
 }
