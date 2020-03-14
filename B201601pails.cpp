@@ -4,17 +4,20 @@ using namespace std;
 
 int main()
 {
-  ifstream("pail.in");
-  ofstream("pail.out");
-  int M, X, Y;
+  ifstream fin("pails.in");
+  ofstream fout("pails.out");
+  
+  int X,Y,M;
   fin >> X >> Y >> M;
-  if (M%Y > X) {
-    if ((M%Y)%X >= M%X) cout << M-M%X << endl;
-    else cout << M-(M%Y)%X << endl;
+  int numY = M/Y;
+  int maxNum = 0, amtMilk;
+  
+  for (int j = 0; j <= yPails; j++) {
+    int numX = (M-j*Y)/X;
+    amtMilk = numX*X + j*Y;
+    if (amtMilk >= maxNum) maxNum = amtMilk;
   }
-  else if (M%Y > M%X) cout << M-M%X << endl;
-  else cout << M-M%X << endl;
+  fout << maxNum << "\n";
   
   return 0;
 }
-      
